@@ -18,9 +18,14 @@
     var role = ""; 
     var start; 
     var rate = 0; 
+    var monthsWorked = 0;
+    var totalBilled = 0;
+    var currentDate;
 
+    currentDate = moment().format("DD/MM/YY");
+  
     // Capture Button Click
-    $("#add-user").on("click",(event) => {
+    $("#add-user").on("click",(event) => { 
     
         event.preventDefault();
 
@@ -29,6 +34,7 @@
         role = $("#role-input").val().trim();
         start = $("#start-input").val();
         rate = $("#rate-input").val();
+        monthsWorked =
 
         console.log(name);
         console.log(role);
@@ -53,7 +59,6 @@
             role,
             start,
             rate,
-            comment,
             dateAdded: firebase.database.ServerValue.TIMESTAMP
         });
 
@@ -70,13 +75,6 @@
         console.log(sv.start);
         console.log(sv.rate);
         console.log(sv.comment);
-
-        // Change the HTML to reflect
-        $("#name-display").text(sv.name);
-        $("#role-display").text(sv.role);
-        $("#start-display").text(sv.start);
-        $("#Monthly-display").text(sv.rate); 
-        $("#comment-display").text(sv.comment);
 
         // Handle the errors
     },(errorObject) => {
