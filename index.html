@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS CDN  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
   <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  
 </head>
 <body>
 
@@ -17,8 +18,8 @@
       <br>
   
       <!-- Jumbotron -->
-      <div class="jumbotron">
-        <h1 class="text-center">Sign-Up Today!</h1>
+      <div class="jumbotron" style="background-color:brown ; color: white;">
+        <h1 class="text-center">Employee Data managemnet!</h1>
       </div>
   
       <div class="row">
@@ -27,7 +28,7 @@
         <div class="col-lg-6">
           <div class="card card-default">
             <div class="card-heading">
-              <h3 class="card-title">New Member Sign-Up</h3>
+              <h3 class="card-title">New Employee Sign-Up</h3>
             </div>
             <div class="card-body">
   
@@ -39,15 +40,15 @@
                   <input class="form-control" id="name-input" type="text">
                 </div>
                 <div class="form-group row">
-                  <label for="email-input">Role</label>
+                  <label for="Role-input">Role</label>
                   <input class="form-control" id="role-input" type="role">
                 </div>
                 <div class="form-group row">
-                  <label for="age-input">Start Date (MM/DD/YYYY)</label>
+                  <label for="Start-input">Start Date (MM/DD/YYYY)</label>
                   <input class="form-control" id="start-input" type="start">
                 </div>
                 <div class="form-group row">
-                    <label for="age-input">Monthly Rate</label>
+                    <label for="Monthly-input">Monthly Rate</label>
                     <input class="form-control" id="rate-input" type="rate">
                   </div>
                 <div class="form-group row">
@@ -67,12 +68,13 @@
         <div class="col-lg-6">
           <div class="card card-default">
             <div class="card-heading">
-              <h3 class="card-title">Most Recent Member</h3>
+              <h3 class="card-title">Most Recent Employee</h3>
             </div>
             <div class="card-body" id="recent-member">
               <h2 id="name-display"></h2>
-              <h4 id="email-display"></h4>
-              <h4 id="age-display"></h4>
+              <h4 id="role-display"></h4>
+              <h4 id="Start-display"></h4>
+              <h4 id ="Monthly-display"></h4>
               <p id="comment-display"></p>
             </div>
           </div>
@@ -86,6 +88,6 @@
     <script src="https://code.jquery.com/jquery.js"></script>
   
     <!-- Script -->
-    <script src="script.js"></script></script>
+    <script src="script.js"></script>
   </body>
   </html>

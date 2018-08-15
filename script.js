@@ -15,8 +15,9 @@ var database = firebase.database();
 
 // Initial Values
 var name = "";
-var email = "";
-var age = 0;
+var role = "";
+var start = "";
+var rate = "";
 var comment = "";
 
 // Capture Button Click
@@ -25,15 +26,17 @@ $("#add-user").on("click", function (event) {
 
     // Grabbed values from text boxes
     name = $("#name-input").val().trim();
-    email = $("#email-input").val().trim();
-    age = $("#age-input").val().trim();
+    role = $("#role-input").val().trim();
+    start = $("#start-input").val().trim();
+    rate = $("#Monthly-input").val().trim();
     comment = $("#comment-input").val().trim();
 
     // Code for handling the push
     database.ref().push({
         name: name,
-        email: email,
-        age: age,
+        role: role,
+        start: start,
+        rate: rate,
         comment: comment,
         dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
@@ -47,14 +50,16 @@ database.ref().on("child_added", function (snapshot) {
 
     // Console.loging the last user's data
     console.log(sv.name);
-    console.log(sv.email);
-    console.log(sv.age);
+    console.log(sv.role);
+    console.log(sv.start);
+    console.log(sv.rate);
     console.log(sv.comment);
 
     // Change the HTML to reflect
     $("#name-display").text(sv.name);
-    $("#email-display").text(sv.email);
-    $("#age-display").text(sv.age);
+    $("#role-display").text(sv.role);
+    $("#start-display").text(sv.start);
+    $("#Monthly-display").text(sv.rate); 
     $("#comment-display").text(sv.comment);
 
     // Handle the errors
