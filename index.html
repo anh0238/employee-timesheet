@@ -9,7 +9,12 @@
     <!-- Bootstrap CSS CDN  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
   <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
-  
+  <style>
+    .card-body a {
+      word-break: break-all;
+    }
+
+  </style>
 </head>
 <body>
 
@@ -19,7 +24,7 @@
   
       <!-- Jumbotron -->
       <div class="jumbotron" style="background-color:brown ; color: white;">
-        <h1 class="text-center">Employee Data managemnet!</h1>
+        <h1 class="text-center">Employee Data management!</h1>
       </div>
   
       <div class="row">
@@ -27,7 +32,7 @@
         <!-- Sign-Up Card-->
         <div class="col-lg-6">
           <div class="card card-default">
-            <div class="card-heading">
+            <div class="card-header">
               <h3 class="card-title">New Employee Sign-Up</h3>
             </div>
             <div class="card-body">
@@ -41,16 +46,24 @@
                 </div>
                 <div class="form-group row">
                   <label for="Role-input">Role</label>
-                  <input class="form-control" id="role-input" type="role">
+                  <input class="form-control" id="role-input" type="text">
                 </div>
                 <div class="form-group row">
                   <label for="Start-input">Start Date (MM/DD/YYYY)</label>
-                  <input class="form-control" id="start-input" type="start">
+                  <input class="form-control" id="start-input" type="date">
+                </div>
+                <div class="form-group row">
+                        <label for="worked-input">Months Worked</label>
+                        <input class="form-control" id="worked-input" type="number">
                 </div>
                 <div class="form-group row">
                     <label for="Monthly-input">Monthly Rate</label>
-                    <input class="form-control" id="rate-input" type="rate">
-                  </div>
+                    <input class="form-control" id="rate-input" type="number">
+                </div>
+                <div class="form-group row">
+                        <label for="billed-input">Total Billed</label>
+                        <input class="form-control" id="billed-input" type="number">
+                </div>
                 <div class="form-group row">
                   <label for="comment-input">How did you hear about us?</label>
                   <textarea class="form-control" rows="5" id="comment-input"></textarea>
@@ -62,6 +75,25 @@
   
           </div>
   
+        </div>
+
+        <div class="container">
+            <table class="table">
+                Current Employees
+                <thead>
+                    <tr>
+                        <th>Employee name</th>
+                        <th>Role</th>
+                        <th>Start Date</th>
+                        <th>Months Worked</th>
+                        <th>Monthly Rate</th>
+                        <th>Total Billed</th>
+                    </tr>
+                </thead>
+                <tbody id="employeeInfo">
+
+                </tbody>
+            </table>
         </div>
   
         <!-- Most Recent Member card -->
