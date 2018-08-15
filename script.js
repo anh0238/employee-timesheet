@@ -18,7 +18,6 @@
     var role = ""; 
     var start; 
     var rate = 0; 
-    var comment = ""; 
 
     // Capture Button Click
     $("#add-user").on("click",(event) => {
@@ -30,13 +29,22 @@
         role = $("#role-input").val().trim();
         start = $("#start-input").val();
         rate = $("#rate-input").val();
-        comment = $("#comment-input").val().trim();
 
         console.log(name);
         console.log(role);
         console.log(start);
         console.log(rate);
-        console.log(comment);
+
+        //add inputs to the table
+        var employeeArray = [name, role, start, rate];
+        var tablerow = $("<tr>");
+
+        employeeArray.forEach(function(element) {
+            var tabledata = $("<td>");
+            tabledata.text(element);
+            tablerow.append(tabledata);
+            $("#employeeInfo").append(tablerow);
+        })
 
 
         // Code for handling the push
